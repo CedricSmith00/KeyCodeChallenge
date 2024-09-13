@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Press Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="welcome">Welcome! Press any key to see the key details.</div>
+  <div id="output"></div>
+
+  <script>
+
+    document.addEventListener('keydown', (event) => {
+      console.log('Key pressed:', event);
+      const outputDiv = document.getElementById('output');
+      
+      outputDiv.innerHTML = `
+        <div class="card">
+          <h3>event.key</h3>
+          <p>${event.key}</p>
+        </div>
+        <div class="card">
+          <h3>event.code</h3>
+          <p>${event.code}</p>
+        </div>
+        <div class="card">
+          <h3>event.which</h3>
+          <p>${event.which}</p>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>
